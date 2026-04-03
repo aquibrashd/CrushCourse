@@ -1261,7 +1261,7 @@ function parseMarkdown(text) {
 
 // ============ API CALL ============
 async function callAI(prompt, maxTokens = 1000) {
-  const res = await fetch('/.netlify/functions/chat', {
+  const res = await fetch('/netlify/functions/chat', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ model: 'llama3-8b-8192', max_tokens: maxTokens, messages: [{ role: 'user', content: prompt }] })
