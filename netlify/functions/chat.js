@@ -1,3 +1,5 @@
+const https = require('https');
+
 exports.handler = async (event) => {
   // Handle CORS preflight
   if (event.httpMethod === 'OPTIONS') {
@@ -12,24 +14,39 @@ exports.handler = async (event) => {
     };
   }
 
-  // Only allow POST
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method Not Allowed' };
   }
 
   try {
-    const body = JSON.parse(event.body);
+    const body = event.body;
+    const apiKey = process.env.GROQ_API_KEY;
 
-    const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + process.env.GROQ_API_KEY
-      },
-      body: JSON.stringify(body)
+    const data = await new Promise((resolve, reject) => {
+      const options = {
+        hostname: 'api.groq.com',
+        path: '/openai/v1/chat/completions',
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + apiKey,
+          'Content-Length': Buffer.byteLength(body)
+        }
+      };
+
+      const req = https.request(options, (res) => {
+        let raw = '';
+        res.on('data', (chunk) => { raw += chunk; });
+        res.on('end', () => {
+          try { resolve(JSON.parse(raw)); }
+          catch (e) { reject(new Error('Invalid JSON from Groq: ' + raw)); }
+        });
+      });
+
+      req.on('error', reject);
+      req.write(body);
+      req.end();
     });
-
-    const data = await response.json();
 
     return {
       statusCode: 200,
