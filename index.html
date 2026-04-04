@@ -4,6 +4,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CrushCourse — Your AI Love Coach</title>
+<!-- SEO Meta Tags -->
+<meta name="description" content="CrushCourse is your free AI-powered love coach. Get personalised love strategies, smart message replies, compatibility scores, and perfect gift ideas — all in one place.">
+<meta name="keywords" content="love coach, AI relationship advice, crush advice, smart replies, compatibility test, gift ideas, dating tips, CrushCourse">
+<meta name="author" content="CrushCourse">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://crushcourse.xyz/">
+
+<!-- Open Graph (Facebook, WhatsApp) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://crushcourse.xyz/">
+<meta property="og:title" content="CrushCourse — Your AI-Powered Love Coach">
+<meta property="og:description" content="Get personalised love strategies, smart replies, compatibility insights and gift ideas — free AI love coach.">
+<meta property="og:image" content="https://crushcourse.xyz/logo.png">
+<meta property="og:site_name" content="CrushCourse">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CrushCourse — Your AI-Powered Love Coach">
+<meta name="twitter:description" content="AI-powered love strategies, smart replies, compatibility scores & gift ideas. Free forever.">
+<meta name="twitter:image" content="https://crushcourse.xyz/logo.png">
+
+<!-- AdSense verification -->
+<meta name="google-adsense-account" content="ca-pub-6041689907229817">
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6041689907229817" crossorigin="anonymous"></script>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y4LRP6WLTT"></script>
 <script>
@@ -536,6 +561,28 @@ footer{padding:32px 16px 20px;position:relative;z-index:1;transition:color .3s;b
   .btn-premium-tag { font-size: .57rem; }
   .btn-premium-tag svg { width: 8px; height: 8px; }
 }
+
+/* ============ ADS ============ */
+.banner-ad-wrap{width:100%;margin:18px 0;display:flex;justify-content:center;min-height:90px;background:var(--surface2);border-radius:10px;border:1px dashed var(--border);overflow:hidden;position:relative}
+.banner-ad-wrap::before{content:'Advertisement';position:absolute;top:4px;left:50%;transform:translateX(-50%);font-size:.6rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;z-index:1;pointer-events:none}
+.banner-ad-wrap ins{margin-top:14px}
+
+/* Video ad overlay */
+.video-ad-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:9999;align-items:center;justify-content:center;flex-direction:column;gap:16px;padding:20px}
+.video-ad-overlay.active{display:flex}
+.video-ad-box{background:#000;border-radius:14px;overflow:hidden;width:100%;max-width:560px;aspect-ratio:16/9;position:relative}
+.video-ad-box iframe{width:100%;height:100%;border:none}
+.video-ad-skip{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;font-family:'DM Sans',sans-serif;font-size:.82rem;padding:8px 18px;border-radius:8px;cursor:pointer;transition:background .2s;display:flex;align-items:center;gap:6px}
+.video-ad-skip:hover{background:rgba(255,255,255,.25)}
+.video-ad-label{font-size:.76rem;color:rgba(255,255,255,.6);text-align:center}
+.skip-timer{font-weight:600;color:#ffd700}
+.video-ad-skip:disabled{opacity:.5;cursor:not-allowed}
+
+/* Save buttons */
+.save-btn-group{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.save-btn{padding:7px 15px;border-radius:8px;font-size:.78rem;font-family:'DM Sans',sans-serif;font-weight:500;cursor:pointer;border:1px solid var(--border);background:var(--surface2);color:var(--muted);transition:all .2s;display:inline-flex;align-items:center;gap:5px;-webkit-tap-highlight-color:transparent}
+.save-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+.save-btn svg{width:13px;height:13px;flex-shrink:0}
 </style>
 </head>
 <body>
@@ -573,6 +620,12 @@ footer{padding:32px 16px 20px;position:relative;z-index:1;transition:color .3s;b
 </div>
 
 <!-- TABS -->
+<!-- BANNER AD — top of page -->
+<div class="banner-ad-wrap" style="max-width:720px;margin:14px auto 0;padding:0 14px">
+  <ins class="adsbygoogle" style="display:block;width:100%;height:90px" data-ad-client="ca-pub-6041689907229817" data-ad-slot="YOUR_BANNER_SLOT_ID_1" data-ad-format="horizontal"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
 <div class="tabs-wrapper">
   <div class="tabs">
     <button class="tab-btn active" onclick="switchTab('strategy',this)">
@@ -696,6 +749,12 @@ footer{padding:32px 16px 20px;position:relative;z-index:1;transition:color .3s;b
       <div><h2>Your Personalised Plan</h2><p id="result-subtitle">Tailored steps to win their heart</p></div>
     </div>
     <div id="result-content"></div>
+      <div class="save-btn-group">
+        <button class="save-btn" onclick="saveAsImage('result','love-strategy')">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>Save as Image</button>
+        <button class="save-btn" onclick="saveAsPDF('result','love-strategy')">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Save as PDF</button>
+      </div>
     <button class="btn-again" onclick="resetStrategy()">← Start over with someone new</button>
   </div>
 </div>
@@ -941,6 +1000,16 @@ footer{padding:32px 16px 20px;position:relative;z-index:1;transition:color .3s;b
         <div id="compat-couples"></div>
       </div>
     </div>
+    <div class="save-btn-group">
+        <button class="save-btn" onclick="saveAsImage('compat-result','compatibility')">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>Save as Image</button>
+        <button class="save-btn" onclick="saveAsPDF('compat-result','compatibility')">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Save as PDF</button>
+      </div>
+    <div class="banner-ad-wrap" style="margin:16px 0">
+      <ins class="adsbygoogle" style="display:block;width:100%;height:90px" data-ad-client="ca-pub-6041689907229817" data-ad-slot="YOUR_BANNER_SLOT_ID_2" data-ad-format="horizontal"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
     <button class="btn-again" onclick="resetCompat()">← Check another pair</button>
   </div>
 </div>
@@ -1063,6 +1132,16 @@ footer{padding:32px 16px 20px;position:relative;z-index:1;transition:color .3s;b
       <div><h2>Gift Ideas For You</h2><p id="gifts-subtitle">Handpicked just for your occasion</p></div>
     </div>
     <div class="gifts-grid" id="gifts-grid"></div>
+    <div class="save-btn-group" style="margin-top:14px">
+        <button class="save-btn" onclick="saveAsImage('gifts-result','gift-ideas')">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>Save as Image</button>
+        <button class="save-btn" onclick="saveAsPDF('gifts-result','gift-ideas')">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Save as PDF</button>
+      </div>
+    <div class="banner-ad-wrap" style="margin:16px 0">
+      <ins class="adsbygoogle" style="display:block;width:100%;height:90px" data-ad-client="ca-pub-6041689907229817" data-ad-slot="YOUR_BANNER_SLOT_ID_3" data-ad-format="horizontal"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
     <button class="btn-again" onclick="resetGifts()" style="margin-top:18px">← Find more gifts</button>
   </div>
 </div>
@@ -1084,6 +1163,109 @@ footer{padding:32px 16px 20px;position:relative;z-index:1;transition:color .3s;b
 </footer>
 
 <script>
+// ============ VIDEO AD SYSTEM ============
+let videoAdCallback = null;
+let skipInterval = null;
+
+function showVideoAd(onComplete) {
+  videoAdCallback = onComplete;
+  const overlay = document.getElementById('videoAdOverlay');
+  const skipBtn = document.getElementById('skipAdBtn');
+  const timer = document.getElementById('skipTimer');
+  overlay.classList.add('active');
+  skipBtn.disabled = true;
+  let secs = 12;
+  timer.textContent = secs;
+  skipInterval = setInterval(() => {
+    secs--;
+    timer.textContent = secs;
+    if (secs <= 0) {
+      clearInterval(skipInterval);
+      skipBtn.disabled = false;
+      skipBtn.innerHTML = '<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg> Skip Ad';
+    }
+  }, 1000);
+  if (typeof gtag !== 'undefined') gtag('event', 'ad_shown', { event_category: 'ads', event_label: 'video_ad' });
+}
+
+function closeVideoAd() {
+  clearInterval(skipInterval);
+  document.getElementById('videoAdOverlay').classList.remove('active');
+  const skipBtn = document.getElementById('skipAdBtn');
+  skipBtn.disabled = true;
+  skipBtn.innerHTML = 'Skip in <span class="skip-timer" id="skipTimer">12</span>s';
+  if (typeof gtag !== 'undefined') gtag('event', 'ad_skipped', { event_category: 'ads', event_label: 'video_ad' });
+  if (videoAdCallback) { videoAdCallback(); videoAdCallback = null; }
+}
+
+// ============ GA EVENT TRACKING ============
+let formStarted = { strategy: false, reply: false, compat: false, gifts: false };
+function markFormStarted(tab) {
+  if (!formStarted[tab]) {
+    formStarted[tab] = true;
+    if (typeof gtag !== 'undefined') gtag('event', 'form_started', { event_category: 'engagement', event_label: tab });
+  }
+}
+function trackResultShown(tab) {
+  if (typeof gtag !== 'undefined') gtag('event', 'result_shown', { event_category: 'engagement', event_label: tab });
+  formStarted[tab] = false;
+}
+function trackSave(tab, format) {
+  if (typeof gtag !== 'undefined') gtag('event', 'save_result', { event_category: 'engagement', event_label: tab + '_' + format });
+}
+
+window.addEventListener('beforeunload', () => {
+  const resultVisible = {
+    strategy: document.getElementById('result')?.style.display !== 'none',
+    reply: document.getElementById('reply-results')?.style.display !== 'none',
+    compat: document.getElementById('compat-result')?.style.display !== 'none',
+    gifts: document.getElementById('gifts-result')?.style.display !== 'none',
+  };
+  Object.entries(formStarted).forEach(([tab, started]) => {
+    if (started && !resultVisible[tab]) {
+      if (typeof gtag !== 'undefined') gtag('event', 'form_abandoned', { event_category: 'engagement', event_label: tab, non_interaction: true });
+    }
+  });
+});
+
+// ============ SAVE AS IMAGE ============
+function loadScript(src) {
+  return new Promise((resolve, reject) => {
+    if (document.querySelector('script[src="' + src + '"]')) { resolve(); return; }
+    const s = document.createElement('script');
+    s.src = src; s.onload = resolve; s.onerror = reject;
+    document.head.appendChild(s);
+  });
+}
+
+async function saveAsImage(elementId, filename) {
+  trackSave(filename, 'image');
+  try {
+    await loadScript('https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js');
+    const el = document.getElementById(elementId);
+    const canvas = await html2canvas(el, { backgroundColor: getComputedStyle(document.body).backgroundColor, scale: 2, useCORS: true, logging: false });
+    const a = document.createElement('a');
+    a.download = 'crushcourse-' + filename + '.png';
+    a.href = canvas.toDataURL('image/png');
+    a.click();
+  } catch(e) { alert('Could not save image. Please take a screenshot instead.'); }
+}
+
+async function saveAsPDF(elementId, filename) {
+  trackSave(filename, 'pdf');
+  try {
+    await loadScript('https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js');
+    await loadScript('https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js');
+    const el = document.getElementById(elementId);
+    const canvas = await html2canvas(el, { backgroundColor: getComputedStyle(document.body).backgroundColor, scale: 2, useCORS: true, logging: false });
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+    const w = pdf.internal.pageSize.getWidth();
+    pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, w, (canvas.height * w) / canvas.width);
+    pdf.save('crushcourse-' + filename + '.pdf');
+  } catch(e) { alert('Could not generate PDF. Try saving as image instead.'); }
+}
+
 // ============ THEME ============
 function applyTheme(isLight) {
   isLight ? document.documentElement.classList.add('light') : document.documentElement.classList.remove('light');
@@ -1267,6 +1449,35 @@ window.addEventListener('DOMContentLoaded', () => {
   showLuckyMessage();
   restoreFormData();
   attachAutoSave();
+  // Attach form-started GA tracking
+  ['their-name','their-personality'].forEach(id => {
+    document.getElementById(id)?.addEventListener('focus', () => markFormStarted('strategy'), { once: true });
+  });
+  document.getElementById('their-message')?.addEventListener('focus', () => markFormStarted('reply'), { once: true });
+  document.getElementById('p1-name')?.addEventListener('focus', () => markFormStarted('compat'), { once: true });
+  document.getElementById('gift-occasion')?.addEventListener('change', () => markFormStarted('gifts'), { once: true });
+});
+
+// ============ WRAP PREMIUM FEATURES WITH VIDEO AD ============
+// Must be defined after the original functions — override at runtime
+document.addEventListener('DOMContentLoaded', () => {
+  // Store refs to originals after full parse
+  const _compat = window.checkCompatibility;
+  window.checkCompatibility = function() {
+    const p1 = document.getElementById('p1-name').value.trim();
+    const p2 = document.getElementById('p2-name').value.trim();
+    if (!p1 || !p2) { return _compat(); }
+    if (typeof gtag !== 'undefined') gtag('event', 'premium_initiated', { event_category: 'premium', event_label: 'compatibility' });
+    showVideoAd(() => { trackResultShown('compat'); _compat(); });
+  };
+
+  const _gifts = window.generateGifts;
+  window.generateGifts = function() {
+    const occ = document.getElementById('gift-occasion').value;
+    if (!occ) { return _gifts(); }
+    if (typeof gtag !== 'undefined') gtag('event', 'premium_initiated', { event_category: 'premium', event_label: 'gifts' });
+    showVideoAd(() => { trackResultShown('gifts'); _gifts(); });
+  };
 });
 
 // ============ MARKDOWN PARSER ============
@@ -1363,6 +1574,7 @@ Be warm, specific, avoid clichés.`;
     document.getElementById('result').style.display = 'block';
     document.getElementById('result-subtitle').textContent = `Your personalised strategy to win ${name}'s heart`;
     document.getElementById('result-content').innerHTML = parseMarkdown(text);
+    trackResultShown('strategy');
   } catch(e) {
     document.getElementById('strategy-loading').style.display = 'none';
     document.getElementById('form-section').style.display = 'block';
@@ -1413,6 +1625,7 @@ Reply ONLY with this raw JSON (no extra text, no markdown):
 
     document.getElementById('reply-loading').style.display = 'none';
     document.getElementById('reply-results').style.display = 'block';
+    trackResultShown('reply');
     document.getElementById('preview-sender-label').textContent = gender === 'girl' ? 'She said:' : gender === 'boy' ? 'He said:' : 'They said:';
     document.getElementById('preview-message-text').textContent = msg;
     document.getElementById('reply-romantic').textContent = parsed.romantic || '—';
@@ -1670,5 +1883,23 @@ function resetGifts() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 </script>
+
+<!-- VIDEO AD OVERLAY -->
+<div class="video-ad-overlay" id="videoAdOverlay">
+  <div class="video-ad-label">Your result is ready — please watch a short ad</div>
+  <div class="video-ad-box">
+    <ins class="adsbygoogle"
+         style="display:block;width:100%;height:100%"
+         data-ad-client="ca-pub-6041689907229817"
+         data-ad-slot="YOUR_VIDEO_AD_SLOT_ID"
+         data-ad-format="video"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+  <button class="video-ad-skip" id="skipAdBtn" disabled onclick="closeVideoAd()">
+    Skip in <span class="skip-timer" id="skipTimer">12</span>s
+  </button>
+  <div class="video-ad-label" style="font-size:.68rem">CrushCourse Premium features are free — supported by ads</div>
+</div>
 </body>
 </html>
